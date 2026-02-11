@@ -5,30 +5,75 @@
 
     </head>
     <body>
-        <strong> Laboratorio 1 </strong>
+        <h1> Laboratorio 1 </h1>
         <h2> Datos generales </h2>
         <p> Nombre: Andrea Iliana Cantú Mayorga <br> <!--salto de linea-->
             Matricula: A01753419 <br>
             Correo: A01753419@tec.mx <br>
         </p>
         <h2> Preguntas a responder: </h2>
-        <p> 1. ¿Cuál es la diferencia entre Internet y la World Wide Web? <br> <!--salto de linea-->
+        <p> <strong> 1. ¿Cuál es la diferencia entre Internet y la World Wide Web? <br> </strong>
             Respuesta: El internet es una inmensa red de computadoras conectadas entre si, 
             mientras que la World Wide Web (WWW) es una enorme colección de páginas que se sienta sobre esa red de computadoras<br>
-            2. ¿Cuáles son las partes de un URL? <br>
+            <strong> 2. ¿Cuáles son las partes de un URL? <br> </strong>
             Respuesta: Una URL (Localizador Universal de Recursos) es un tipo de URI (Identificador Universal de Recuros) específico,
             un URL se ubica normalmente en un recurso ya existente de internet, el mismo se utiliza cuando un cliente web hace una petición
             al servidor para obtener un recurso. El URL en el inicio tiene el prrotocolo, seguido por el dominio, el path y el parametro. <br>
-            3. ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE? <br>
+            <strong> 3. ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE? <br> </strong>
             Respuesta: Los métodos HTTP, son el formato de comunicación entre el cliente y el servidor web. <br>
-            - GET: realiza una petición a un recurso en específico. <br>
-            - POST: puede enviar datos por medio del cuerpo
+            Los metodos mas comunes son GET y POST:
+            - GET: realiza una petición a un recurso en específico. Los datos no son modificados ni los estados de los recursos <br>
+            - POST: creamos un nuevo recurso, necesita de un cuerpo en donde defines la identidad de la data creada,
+            puede enviar datos por medio del cuerpo para crear el recurso. <br>
+            - PUT: usas este metodo para actualizar un recurso existente, utilizando el contenido del mismo, es una forma de "editar" algo. 
+            Si no hay un recurso que sea igual al que se pide, se crea uno nuevo. <br>
+            - HEAD: usas este metodo igual que GET, pero solo regresa HEAD, no debe de tener el cuerpo, usas el metodo par verificar si el recurso esta
+            presente a la hora de usar GET. <br>
+            - PATCH: Usas el metodo para aplicar parcialmente las modificaciones del recurso, con patch solo necesitas pasar la data que quieres modificar <br>
+            - DELETE: Usas el metodo para eliminar el recurso especificado. <br>
+            <strong> 4. ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué? <br> </strong>
+            Respuesta: Se debe de utilizar el metodo de POST, porque estas creando una nueva respuesta con el usuario y contraseña. Pero para obtener esta respuesta,
+            debes de usar el metodo GET para visualizar el usuario y contraseña. <br>
+            <strong> 5. ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL? <br> </strong>
+            Respuesta: Se utiliza el método de GET porque quieres tener acceso a un recurso, en este caso lo que se tiene dentro de la URL. <br>
+            <strong> 6. Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error? <br> </strong>
+            Respuesta: Cuando un servidor web regresa el codigo 200, significa que la solicitud se hizo exitosamente. Lo cual signiifica que para los metodos: <br>
+            - GET: los recursos han sido obtenidos y transmitidos en el mensaje del cuerpo. <br>
+            - HEAD: Los headers se han incluido en la respuesta sin un mensaje del cuerpo. <br>
+            - PUT o POST: Los recursos se han transmitid en el mensaje del cuerpo. <br>
+            En resumen: No significa que hay un error, por lo contrario que se hizo exitosamente lo pedido. <br>
+            <strong> 7. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué? <br> </strong>
+            Respuesta: El error 404 o "Not Found", es cuando el servidor no puede encontrar el recurso solicitado, en el buscador significa que el URL no es reconocido. <br>
+            En API tambien puede significar que el endpoint es valido pero el recurso en sí no existe. <br>
+            Sí es respondabilidad del desarollador porque tiene que ver porque el servidor no puede encontrar el recurso y arreglarlo, para que se pueda visualizar. <br>
+            <strong> 8. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué? </strong>
+            Respuesta: El error 500 o "Internal Server Error", este es un error genérico, indicando que el servidor no puede encontrar un codigo de error mas apropiado <br>
+            Tambien pueden significar fallos tecnicos dentro del codigo y sí es responsabilidad del desarrollador corregir el error, para brindarle una mejor experiencia al usuario y al cliente. <br>
+            Además que es la unica manera que se puede visualizar la página web <br>
+            <strong> 9. ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados. <br> </strong>
+            Respuesta:
+            <strong> 10. ¿Cuáles son las diferencias principales entre HTML 4 y HTML5? <br> </strong>
+            Respuesta:
+            <strong> 11. ¿Qué componentes de estructura y estilo tiene una tabla? <br> </strong>
+            Respuesta:
+            <strong> 12. ¿Cuáles son los principales controles de una forma HTML5? <br> </strong>
+            Respuesta:
+            <strong> 13. ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas) <br> </strong>
+            Respuesta:
+            <strong> 14. Sobre el ciclo de vida y desarrollo de los sistemas de información: <br> </strong>
+            Respuesta:
+            <strong> - ¿Cuál es el ciclo de vida de los sistemas de información? <br> </strong>
+            Respuesta:
+            <strong> - ¿Cuál es el ciclo de desarrollo de sistemas de información? <br> </strong>
         </p>
         <h2> Referencias </h2>
         <p> https://www.bbc.com/mundo/noticias-47538812 <br> <!--salto de linea-->
             https://www.ibm.com/docs/es/cics-ts/6.x?topic=concepts-components-url<br>
         </p>
-        <footer> Nombre del editor usado: Visual Studio Code <br>
-        Link: https://code.visualstudio.com/download</footer>
+        <footer> 
+            <p>Nombre del editor usado: Visual Studio Code <br>
+        Link: https://code.visualstudio.com/download</p>
+        </footer>
+        
     </body>
 </html>
