@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <!--color-->
+        <h1 class = "red darken-3 blue-text text-lighten-3" >Heading one: color</h1>
+        <!--allignment-->
+        <h1 class = "red center-align"> Heading one: allign center </h1>
+        <h1 class = "blue"> Heading one: allign left </h1>
+        <h1 class = "green right-align"> Heading one: allign right </h1>
+        <!-- division row -->
+        <div class="row">
+            <!-- small screens ocupy 12/12 columns, medium screens 6/12 columns, large screens 4/12 columns-->
+            <h1 class = "red col s12 m6 l4"> Heading one: columns </h1>
+            <!--We hide an element on small screens-->
+            <h1 class = "blue hide-on-small-only col s12 m6 l4 "> Heading one: columns </h1>
+            <!--We hide an element on medium and small screens-->
+            <h1 class = "green hide-on-med-and-down col s12 m6 l4 "> Heading one: columns </h1>
+        </div>
+        <!-- Crear una clase -->
+        <div class = "container">
+            <div class = "row">
+                <h1 class="red col s12 m6 l4"> Heading one container</h1>
+                <h1 class="blue col s12 m6 l4"> Heading one container</h1>
+                <h1 class="green col s12 m6 l4"> Heading one container</h1>
+            </div>
+        </div>
+
+        <!-- Navegaation bar -->
+         <nav class="blue">
+            <div class="nav-wrapper">
+                <a href="" class="brand-logo"> Logo </a>
+                <ul id="nav-mobile" class="right hide-on-small-only">
+                    <li><a href="">Home</a> </li>
+                    <li><a href="">about</a> </li>
+                    <li><a href="">contact</a> </li>
+                </ul>
+            </div>
+         </nav>
+         <!-- Button -->
+        <button class="btn-large">button</button>
+        <a href="" class="red btn"> 
+            <i class="material-icons right">send</i>
+            add </a>
+        <a href="" class="btn-floating pulse"><i class="material-icons">cloud</i></a>
+        <!-- Image -->
+        <div class = "row">
+            <div class="col s12 m6">
+                <img class="responsive-img circle hoverable" src="epic.jpg" alt="">
+            </div>
+            <!-- Video -->
+            <div class="col s12 m6">
+                <div class="video-container">
+                    <iframe width="791" height="454" src="https://www.youtube.com/embed/Nw9yghNLzF4" title="Top 30 Musical Love Songs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        <!-- Cards -->
+         <div class="row">
+            <div class="col s12 m4">
+                <div class="card teal">
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor 
+                            sit amet consectetur 
+                            adipisicing elit. Sint, vitae eaque. 
+                            Quae excepturi aut dolorum, sapiente omnis velit? 
+                            Ipsum temporibus culpa provident atque voluptas perspiciatis alias quasi. 
+                            Facilis, quos magnam?</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="" class="">Read more</a>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <!-- Card image -->
+    <div class="row">
+        <div class="col s12 m4">
+            <div class="card z-depth-4">
+                <div class="card-image">
+                    <img src="epic.jpg" alt="">
+                    <span class="card-title">Card Title</span>
+                    <a href="" class="btn-floating halfway-fab pulse blue">
+                        <i class="material-icons"> add</i></a>
+                </div>
+                <div class="card-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dicta blanditiis numquam eum minima quibusdam eligendi nesciunt molestias officiis accusamus, quos ipsa deserunt impedit, libero distinctio porro reiciendis! Voluptas, qui.</p>
+                </div>
+                <div class="card-action">
+                    <a href=""> More..</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Forms -->
+    <div class="row">
+        <form action="" class="valign-wrapper blue white-text col s12 m6" style="height:25rem">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix"> account_box </i>
+                    <input type="text" name="" id="fname" placeholder="first name" />
+                    <label class = "white-text" for="fname"> First name </label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix"> add_alarm </i>
+                    <input type="text"  class = "fname" name="" id="lname" placeholder="last name" />
+                    <label class = "white-text" for="Last name"> Last name </label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="email"  class = "validate" name="" id="fname" placeholder="examples@gmail.com" />
+                    <label for="lname"> Write email </label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+         
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    </body>
+  </html>
+
