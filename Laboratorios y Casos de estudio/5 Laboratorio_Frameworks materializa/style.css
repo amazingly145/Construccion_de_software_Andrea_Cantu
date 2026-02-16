@@ -1,0 +1,138 @@
+
+
+/* Selecstor de tipo genericos */
+body{
+    background-color: rgb(255, 244, 214);
+    margin: 0 auto;
+    max-width: 80em;
+    padding: 5em 1em;
+}
+
+/*Se queda hasta arriba*/
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+h1{
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #878c96;
+}
+
+h2{
+    border-bottom: 1px solid #707275;
+    margin: 1em;
+}
+
+h3{
+    margin: 1px;
+    background-color: rgb(255, 228, 193);
+
+}
+
+p{
+    margin: 1em;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    text-align: left;
+
+}
+
+ul{
+    margin: 1em;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    
+
+}
+
+ol{
+    margin: 1em;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+}
+
+table, th, td{
+    border-collapse: collapse;
+    margin:auto;
+    border: 1px solid black;
+    background-color:white;
+    text-align:center;
+}
+
+button{
+    display: block;
+    margin: auto;
+}
+
+/* Selector de tipo Clases */
+.title{
+    border-bottom: 20px;
+    padding: 20px;
+    color: rgb(216, 9, 199);
+    border: rgb(0, 0, 0)
+}
+
+.respuesta{
+    color: red !important;
+
+}
+
+.pregunta{
+    background-color:rgb(245, 189, 125);
+    font-weight: bold;
+    font-size:12pt;
+
+}
+
+.img-atletismo{
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  margin: auto;   /* centra horizontal */
+}
+
+/* Selectores de tipo Pseudo Clases */
+img:hover{
+    transform: scale(0.95);
+
+}
+
+button:hover{
+    background-color: rgb(162, 238, 243);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+/* Selectores de tipo ID */
+#hamilton{
+    background-color: rgb(252, 241, 147);
+}
+
+#wicked{
+    background-color: rgb(255, 184, 225);
+}
+
+#wicked_good{
+    background-color: rgb(252, 179, 252);
+}
+
+#epic{
+    background-color: rgb(152, 222, 243);
+
+}
+
+#atletismo{
+    background-color: rgb(255, 136, 136); 
+}
+

@@ -1,0 +1,90 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla Responsive</title>
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Responsive móvil -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+    /* Estilos opcionales */
+    body{
+      background-color: #fff4d6;
+      padding: 20px;
+    }
+
+    /* Imágenes responsivas dentro de la tabla */
+    .responsive-table img{
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h4 class="center-align">Películas favoritas</h4>
+
+  <!-- TABLA RESPONSIVE -->
+  <table class="responsive-table striped centered">
+
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Año</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Hamilton</td>
+        <td>2020</td>
+        <td>
+          <img src="hamilton.jpg" alt="Hamilton">
+        </td>
+      </tr>
+
+      <tr>
+        <td>Wicked</td>
+        <td>2024</td>
+        <td>
+          <img src="Wicked.png" alt="Wicked">
+        </td>
+      </tr>
+
+      <tr>
+        <td>Epic</td>
+        <td>2013</td>
+        <td>
+          <img src="epic.jpg" alt="Epic">
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div class="row">
+
+  <div class="col s12 m6 l4">Datos</div>
+  <div class="col s12 m6 l4">Intereses</div>
+  <div class="col s12 m12 l4">Foto</div>
+
+    </div>
+
+
+  <!-- Materialize JS (opcional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
+```
