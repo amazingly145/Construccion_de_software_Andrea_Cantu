@@ -153,4 +153,79 @@ console.log("Impresión como string/entero");
 console.log(inverso(e5).join(""));
 
 /*Ejercicio 6
- */
+Aplicación de ejercicio: sistema de tareas
+*/
+
+// Sistema de tareas
+const tarea = {
+    //atributos 
+    nombre : [],
+    materia : [],
+    calificacion : [],
+    tareas : [],
+    //metodos
+    agregar_tarea: function(variable) {
+        this.nombre.push(variable);
+    },
+    calificar : function(nota){
+        this.calificacion.push(Number(nota));
+    },
+    asignar_materia : function (materias){
+        this.materia.push(materias);
+    },
+    verificar_calificacion : function (){
+        for (let i = 0; i < this.calificacion.length; i++){
+            if (this.calificacion[i] == 100){
+                console.log("¡Felicidades! Vas muy bienn" );
+            } else if (this.calificacion[i] < 100 && this.calificacion[i] > 69){
+                console.log("¡Muy bien, lo estas logrando");
+            } else if (this.calificacion[i] <= 69){
+                console.log("¡Cuidado! Necesitamos mejorar")
+            }
+        }
+    },
+    promedio : function () {
+        let promedio = 0;
+        let contador = 0;
+        if (this.calificacion.length === 0) {
+        console.log("No hay calificaciones registradas");
+        return 0;
+        }
+
+        for (let i = 0; i < this.calificacion.length; i++){
+            promedio += this.calificacion[i];
+            contador ++;
+        }
+        
+        promedio = promedio / contador;
+        return promedio;
+    },
+    asignar_tarea : function () {
+        this.tareas.push(this.nombre);
+        this.tareas.push(this.materia);
+        this.tareas.push(this.calificacion);
+    }
+}
+
+console.log("Ejercicio 6: Sistema de Tareas");
+console.log("Vamos a revisar cómo vas en tu Semestre");
+
+var e6;
+let num_tareas = prompt ("Escribe cuantas tareas has hecho: ")
+tarea.agregar_tarea (num_tareas);
+console.log("Ahora vamos a revisar si vas bien o no, ¿Cuántas tareas has hecho?" + num_tareas);
+while(num_tareas > 0){
+    e6 = prompt("Nombre de tarea: ");
+    e6 = tarea.agregar_tarea;
+    e6 = prompt("Calificación:");
+    tarea.calificar(e6);
+    e6 = prompt("Materia: " );
+    tarea.asignar_materia(e6);
+    num_tareas--;
+}
+
+console.log("Ahora vamos a revisar tu promedio");
+console.log("Por ahora llevas un promedio de: " + tarea.promedio());
+console.log("En termino de calificaciones");
+tarea.verificar_calificacion();
+
