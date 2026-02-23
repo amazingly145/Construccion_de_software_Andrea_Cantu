@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <!-- Mi hoja de estilos-->
+    <link rel="stylesheet" href="style.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title id="title">Snoopy's Store</title>
+</head>
+<body>
+    <div class = "center">
+        <img src = "https://peanuts.store/cdn/shop/files/SocialSharing_1200x628_Logo.png?v=1684766042" class="logo_img">
+    </div>
+    <h2>Products</h2>
+    <div class="center-align text">
+        <table class="centered">
+            <tr><th class= "center-align text">Snoopy's Tree House</th>
+                <th class= "center-align text">Lego Snoopy's house</th>
+                <th class= "center-align text">Snoopy's Airplane</th></tr>
+            <tr>
+            <td><figure id="arbol">
+                <img src = "https://http2.mlstatic.com/D_NQ_NP_839817-MLM70067527138_062023-O.webp" class = "arbol_img">
+                </figure>
+                <p class="center-align">$200 + 10% taxes</p>
+                <input id = "cantidad_arbol" type="number" min="0" value="0" style="width: 60px">
+                <button onclick="calcular_precio('tree')" id = "button_tree" type="button"> ¡Buy me! </button></td>
+            <td><figure id="casa">
+                <img src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlsnl8-V4rWYJ1s8fUEheAnr5eo8kTjigLWcUFKUEYCjLOaXUW7b4YxvZPtYxcDc_rPeU1_3P-Ny4s3_cp66963QKrSCDbu9CEuZodPhjuYx08Pegyqevzw8zfCTSkXpDx-k9AahVbfWhbITN7W66kZF5ox_y1YomsF8Rx0jotZyYViOdHt6gmxZrOChiV/s1600/Lego-Snoopy-Woodstock-boxprod_v29.png" class = "arbol_img">
+                </figure>
+                <p class="center-align text">$2,500 + 10% taxes</p>
+                <input id = "cantidad_casa" type="number" min="0" value="0" style="width: 60px">
+                <button onclick="calcular_precio('house')" type="button"> ¡Buy me! </button></td>
+            <td><figure id="avion">
+                <img src = "https://http2.mlstatic.com/D_NQ_NP_819656-MLM88383637265_072025-O.webp" class = "arbol_img">
+                </figure>
+                <p class="center-align text">$500 + 10% taxes</p>
+                <input id="cantidad_avion" type="number" min="0" value="0" style="width: 60px">
+                <button onclick="calcular_precio('plane')" type="button"> ¡Buy me! </button></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Ticket information</h2>
+    <div class="white center-align text">
+        <table class="centered">
+            <tr><th class= "center-align text">Product name</th>
+                <th class= "center-align text">Price</th>
+                <th class= "center-align text">Price with taxes (10%)</th>
+                <th class= "center-align text">Quantity</th>
+                <th class= "center-align text">Product price</th></tr>
+            <tr id="ticket_arbol">
+                <td id="nombre_arbol"></td>
+                <td id="precio_arbol"></td>
+                <td id="taxes_arbol"></td>
+                <td id="cantidad_arbol_ticket"></td>
+                <td id="productPrice_arbol"></td>
+            </tr>
+            <tr id="ticket_casa">
+                <td id="nombre_casa"></td>
+                <td id="precio_casa"></td>
+                <td id="taxes_casa"></td>
+                <td id="cantidad_casa_ticket"></td>
+                <td id="productPrice_casa"></td>
+            </tr>
+            <tr id="ticket_avion">
+                <td id="nombre_avion"></td>
+                <td id="precio_avion"></td>
+                <td id="taxes_avion"></td>
+                <td id="cantidad_avion_ticket"></td>
+                <td id="productPrice_avion"></td>
+            </tr>
+        </table>
+        <button onclick="PagoTotal()" type="button">Confirm ticket</button>
+        <p id="Pago_Final"></p>
+    </div>
+    <h2> Preguntas laboratorio</h2>
+        <div class = "center-align text">
+            <a href="lab_6.html"> <button type="button">Lab 6</button></a>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
