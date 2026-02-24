@@ -1,0 +1,31 @@
+{
+  "name": "clases_ejemplos",
+  "version": "1.0.0",
+  "description": "lab11",
+  "keywords": [
+    "node",
+    "html",
+    "principiante"
+  ],
+  "homepage": "https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu#readme",
+  "bugs": {
+    "url": "https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu.git"
+  },
+  "license": "ISC",
+  "author": "Andrea Cantu",
+  "type": "commonjs",
+  "main": "app_1.js",
+  "scripts": {
+    "start": "node --watch app_1.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hola": "echo\"hola\""
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1"
+  }
+}
