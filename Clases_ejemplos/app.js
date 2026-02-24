@@ -1,59 +1,121 @@
 console.log("hola desde node!");
 
-//Creas un archivo de texto en la carpeta
 const filesystem = require('fs');
 
-filesystem.writeFileSync("hola.txt", "Hola desde node");
+filesystem.writeFileSync('hola.txt', 'Hola desde node');
 
 setTimeout(() => {
-    console.log("jojo te hackie");
-},1500);
+    console.log("jojo te hackié");
+}, 15000);
 
-const html = ```<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Título</title>
-</head>
-<body>
-    <!-- Contenido -->
-</body>
-</html>```
+const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
 
-const arreglo = [5000,60,90,100,10,20,10000,0,120,2000,340,1000,50];
-//cuando pasan 5000 milisegundos se imprime el 5000
-//cuando pasa 20 miliseegundos se imprime el 20
-
-/*const imprimir = (valor) => {
-    console.log(valor);
-}*/
-
-for(let item of arreglo){
+for (let item of arreglo) {
     setTimeout(() => {
-        console.log(item); //se imprime el item
+        console.log(item);
     }, item);
-}
+} 
 
-//Segunda manera
-/*for(let item of arreglo){
-    setTimeout(() => {
-        imprimir(item); //se imprime el item
-    }, item);
-}*/
 
-//Programar un servidor web
-//Servidor web que recibe una petición y regresa una respuesta
+const html_header = `
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Videojuegos
+      </h1>
+      <p class="subtitle">
+        My first website with <strong>Bulma</strong>!
+      </p>
+      `;
+const html_index = `
+    <div class="columns">
+        <div class="column">
+            <div id="halo"></div>
+        </div>
+        <div class="column">
+            Minecraft
+            <figure class="image">
+                <img class="is-rounded" src="https://store-images.s-microsoft.com/image/apps.58378.13850085746326678.826cc014-d610-46af-bdb3-c5c96be4d22c.64287a91-c69e-4723-bb61-03fecd348c2a?q=90&w=480&h=270" />
+            </figure>
+        </div>    
+        <div class="column">      
+                    <li>Cyberpunk</li>
+                    <li>Doom</li>
+                    <li>Gears of war</li>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title">Comandos de git</h1>
+          <ul>
+            <li>git add: Sirve para agregar cambios a la transacción.</li>
+            <li>
+              git commit -m "mensaje en imperativo": Sirve para comprometer 
+              la transacción, es decir, guardar los cambios.
+            </li>
+            <li>git checkout <strong>[nombre_rama]</strong>: Sirve para cambiarse de rama.</li>
+            <li>
+              git checkout -b [nombre_rama]: Sirve para crear una nueva rama y 
+              cambiarse a esa nueva rama.
+            </li>
+            <li>
+              git push: Sirve para sincronizar los cambios desde mi repositorio 
+              hacia el repositorio remoto.
+            </li>
+            <li>
+              git pull: Sirve para sincronizar los cambios del repositorio remoto 
+              hacia mi repositorio.
+            </li>
+          </ul>
+        </div>
+      </div>`
+const html_footer=`
+    </div>
+  </section>
+  <script src="js/comportamientos.js"></script>
+  </body>
+</html>    
+`;
+
+
 const http = require('http');
-//Cualquier peticion que llegue regresa un html
-const server = http.createServer((request, response) => {
-    console.log(request);
-    console.log(request.url);
-    //console.log(response);
-    response.end();
-    response.setHeader("Content-Type", "text/html");
-    response.write("");
 
+
+//request es la peticion que estamos pidiendo
+//response es la respuesta
+const server = http.createServer( (request, response) => {    
+//    console.log(request);
+    console.log(request.url);
+//   console.log(response);
+    if(request.url="/"){
+        response.setHeader('Content-Type', 'text/html');
+        response.write(html);
+        response.end();
+    } else if (request.url="/new"){
+        response.setHeader('Content-Type', 'text/html');
+        response.write("Aqui va una forma");
+        console.log("Ruta /new");
+
+    } else {
+        response.setHeader('Content-Type', 'text/html');
+        response.write("Error 404");
+        console.log("404");
+    }
 });
 
+//el puerto que queremos que esta esscuchando
 server.listen(3000);
 
