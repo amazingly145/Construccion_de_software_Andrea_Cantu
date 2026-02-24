@@ -18,9 +18,14 @@
   "license": "ISC",
   "author": "Andrea Cantu",
   "type": "commonjs",
-  "main": "app.js",
+  "main": "app_1.js",
   "scripts": {
-    "start": "node --watch app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --watch app_1.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hola": "echo\"hola\""
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1"
   }
 }
