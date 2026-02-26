@@ -18,9 +18,9 @@
   "license": "ISC",
   "author": "Andrea Cantu",
   "type": "commonjs",
-  "main": "app_1.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node --watch app_1.js",
+    "start": "node --watch app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "hola": "echo\"hola\""
   },
