@@ -1,0 +1,28 @@
+{
+  "name": "11_laboratorio_express",
+  "version": "1.0.0",
+  "description": "Laboratorio 11, uso de express en npm",
+  "keywords": [
+    "lab11",
+    "express"
+  ],
+  "homepage": "https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu#readme",
+  "bugs": {
+    "url": "https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu.git"
+  },
+  "license": "ISC",
+  "author": "Andrea Cantú",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "lab11, express",
+    "dev": "node --watch app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
