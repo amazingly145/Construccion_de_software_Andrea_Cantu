@@ -1,0 +1,25 @@
+{
+  "name": "10_laboratorio_rutas_y_formas",
+  "version": "1.0.0",
+  "description": "laboratorio 10 probar rutas y formas",
+  "keywords": [
+    "app.js",
+    "lab10"
+  ],
+  "homepage": "https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu#readme",
+  "bugs": {
+    "url": "https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amazingly145/Construccion_de_software_Andrea_Cantu.git"
+  },
+  "license": "ISC",
+  "author": "Andrea Cantu",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start" : "node app.js",
+    "test": "app.js laboratorio 10 rutas"
+  }
+}
