@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const fs = require ('fs');
 
 //Laboratorio / ejercicio en clase de los videojuegos
 const html_header = `
@@ -86,7 +87,7 @@ const html_git = `
                 </div>
               </div>
             </form>
-        <a href="/videojuegos"><button class="button is-primary">Regresar al menu principal</button></a>
+            <a href = "/videojuegos"><button class="button is-primary">Regresar al menu principal</button></a>
 `
 
 const html_lab11 = `
@@ -96,7 +97,7 @@ const html_lab11 = `
         facil implementar los metodos de GET y POST que en el metodo del LAB10, tambien pude aprender
         que .use hace que se quede guardado lo ultimo usado por lo que se debe implementar hasta
         el ultimo, tambien aprendi a como crear diferentes objetos. </p>
-        <a href="/videojuegos"><button class="button is-primary">Regresar al menu principal</button></a>
+        <a href="/videojuegos"><button class = "button is-primary">Regresar al menu principal</button></a>
     </form>`
 //Creamos el objeto de la clase videojuegos
 const videojuegos = [
@@ -114,7 +115,6 @@ const videojuegos = [
 //Este es un middlewre
 router.get('/videojuegos/Lab11',(request,response,next) => {
   response.send(html_header + html_form + html_footer);
-
 });
 
 //tambie es un middleware
@@ -122,6 +122,7 @@ router.post('/videojuegos/Lab11', (request,response,next) => {
   //request.body contains all the data sent from the form when the post method is done
   //when a user fills up the form it is sent through the push method
   videojuegos.push(request.body);
+  fs.writeFileSync('PostAnswer.txt', JSON.stringify(request.body));
   response.redirect('/videojuegos');
 });
 
@@ -148,7 +149,7 @@ router.post('/videojuegos/RespuestasLab11', (request, response, next)  => {
 
 });
 
-router.use((request, response, next) => {
+router.get('/videojuegos',(request, response) => {
   console.log('Otro MiddleWare!');
   let html_index = `
               <a href="/videojuegos/Lab11"><button class="button is-primary">Nuevo videojuego</button></a>
@@ -196,19 +197,29 @@ router.use((request, response, next) => {
                 </div>
               </div>
               <a href="/videojuegos/git"><button class="button is-primary">Comandos GITHUB</button></a>
-              <div class="columns"> 
+              <div class="columns">
           `;
         html_index += `
-            <div class="mt-4">
-            <h1 class="title">Respuestas Laboratorio 11</h1>
-        <a href="/videojuegos/RespuestasLab11">
-      <button class="button is-primary">Respuestas</button>
-    </a>
+  <div class="columns mt-4">
+    <div class="column">
+      <h1 class="title">Respuestas Laboratorio 11</h1>
+      <a href="/videojuegos/RespuestasLab11">
+        <button class="button is-primary">Respuestas</button>
+      </a>
+    </div>
+    <div class="column">
+      <h1 class="title">Tienda de Snoopy</h1>
+      <a href="/Lab10">
+        <button class="button is-primary">Vamos a la tienda de Snoopy</button>
+      </a>
+    </div>
   </div>
+</div>
+</div>
+</section>
 `;
   //Manda la respuesta
   response.send(html_header+html_index+html_footer);
-  next();
 });
 
 module.exports = router;

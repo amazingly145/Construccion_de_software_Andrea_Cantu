@@ -1,0 +1,1 @@
+{"nombre":"Candy Crush","imagen":"https://play.google.com/store/apps/details/Candy_Crush_Saga?id=com.king.candycrushsaga&hl=es_CR"}

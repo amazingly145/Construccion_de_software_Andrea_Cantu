@@ -1,0 +1,68 @@
+.arbol_img {
+    height: 200px;
+    width: 200px;
+}
+
+.logo_img{
+    width: 180px;
+}
+
+.imagen_atras{
+    background-color: white;
+}
+
+/* Selecstor de tipo genericos */
+body{
+    background-image: url("https://img.freepik.com/premium-vector/seamless-pattern-with-clouds-pajamas-bed-linen-hoodie-tracksuit-vector-print_873979-186.jpg?semt=ais_user_personalization&w=740&q=80");
+    margin: 0 auto;
+    max-width: 80em;
+    padding: 5em 1em;
+}
+
+table, th, td {
+    border: none !important;
+    border-collapse:collapse;
+}
+
+td {
+    border-right: none !important;
+}
+
+/*Se queda hasta arriba*/
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+h1{
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+h4{
+    margin: 1em;
+}
+
+h2{
+    font-family: "Agenda", "Assistant", sans-serif;
+}
+
+h3{
+    margin: 1px;
+
+}
+
+
+p{
+    margin: 1em;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    text-align: left;
+    font-family: "Agenda", "Assistant", sans-serif;
+
+}

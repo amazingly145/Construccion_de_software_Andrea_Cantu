@@ -1,13 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
-const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('public'));
 
 const rutasVideojuegos = require ('./routes/videojuegos.routes');
-const rutasVideojuegos2 = require ('./routes/videojuegos_2.routes');
+const rutastiendaSnoopy = require ('./routes/videojuegos_2.routes');
 app.use(rutasVideojuegos);
-app.use( rutasVideojuegos2);
+app.use(rutastiendaSnoopy);
 
 app.use((request,response,next) => {
   response.status(404).send("El videojuego no existe");
