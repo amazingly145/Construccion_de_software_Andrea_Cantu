@@ -91,7 +91,7 @@ const html_git = `
 `
 
 const html_lab11 = `
-    <form action = "/videojuegos/RespuestasLab11 method = "POST">
+    <form action = "/videojuegos/RespuestasLab11" method = "POST">
         <h1> Descripcion de lo aprendido en el lab11</h1>
         <p> En este laboratorio se trabajo con el uso de Express, aqui me di cuenta que era mucho mas 
         facil implementar los metodos de GET y POST que en el metodo del LAB10, tambien pude aprender
