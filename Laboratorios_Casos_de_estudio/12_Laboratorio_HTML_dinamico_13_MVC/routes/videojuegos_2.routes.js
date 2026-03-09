@@ -2,20 +2,13 @@ const express = require ("express");
 const router = express.Router();
 const fs = require ('fs');
 const path = require ('path');
+const videojuegosController = require('../controllers/videojuego.controller');
 
 
 //CuartaRuta
-router.get('/',(request,response,next) => {
-    //We look for the html.index
-    const filePath = path.join(__dirname, '..', 'public','index.html');
-    response.sendFile(filePath);
-});
+router.get('/Lab10', videojuegosController.get_Lab10);
 
 //Quinta ruta o middleware
-router.get('/Lab6',(request, response, next) =>{
-    const filePath = path.join(__dirname,'..','public','lab6.html');
-    response.sendFile(filePath);
-});
-
+router.get('/Lab6', videojuegosController.get_Lab6);
 
 module.exports = router;
