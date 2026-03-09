@@ -13,3 +13,12 @@ exports.get_logout = (request,response,next) => {
         response.redirect('/users/login');
     });
 };
+
+exports.get_signup = (request,response,next) => {
+    response.render('signup');
+}
+
+exports.post_signup = (request,response,next) => {
+    request.session.name = request.body.name;
+    response.redirect('/users/login');
+}
