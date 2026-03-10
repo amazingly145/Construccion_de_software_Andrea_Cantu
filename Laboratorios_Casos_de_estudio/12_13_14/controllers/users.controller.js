@@ -20,5 +20,6 @@ exports.get_signup = (request,response,next) => {
 
 exports.post_signup = (request,response,next) => {
     request.session.name = request.body.name;
+    response.setHeader('Set-Cookie', `nombre_usuario=${request.body.name}; Secure`);
     response.redirect('/users/login');
 }
