@@ -35,10 +35,17 @@ app.use('/videojuegos/Lab', tiendaSnoopy);
 app.use('/users', rutasUsuarios);
 app.use('/videojuegos', rutasVideojuegos);
 
-
 //Error 404
 app.use((request, response, next) => {
     response.status(404).send("El videojuego no existe");
 });
+//Laboratrorio 17
+//Agregamos la variable del error con error.stack
+//Error 500
+app.use((error,request, response, next) => {
+    response.status(500).send(`Error interno del servidor: ${error.stack}`);
+});
+
+
 
 app.listen(3000);

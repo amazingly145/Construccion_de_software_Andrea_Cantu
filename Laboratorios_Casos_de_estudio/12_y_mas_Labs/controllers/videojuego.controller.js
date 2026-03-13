@@ -30,20 +30,35 @@ exports.get_Lab6 = (request, response, next) =>{
 
 exports.get_Lab13 = (request, response, next) => {
     response.render("Lab13_preguntas");
-}
+    console.log("Laboratorio 13")
+};
+
 exports.post_new = (request, response, next) => {
     const videojuego = new Videojuego(request.body.nombre, request.body.imagen);
-    videojuego.save();
-    //Laboratorio 14: cookies
-    //response.setHeader('Set-Cookie', `ultimo_juego=${videojuego.nombre}; Secure`);
-    response.redirect('/videojuegos')
+    videojuego.save().then(() => {
+        return response.redirect ('/videojuegos');
+    }).catch ((error) => {
+        console.log(error);
+        next(error);
+    })
 };
 
 exports.get_list = (request, response, next) => {
-    //Laboratorio 14: cookies
-    //console.log(request.get('Cookie')); //Obtener los valores de una cookie
-    response.render('list', {
-        username: request.session.username,
-        videojuegos: Videojuego.fetchAll(),
+    console.log(request.params.videojuego_id);
+    Videojuego.fetchAll(request.params.videojuego_id).then(([rows,fieldData]) => {
+        console.log(request.session.username);
+        console.log(rows);
+        return response.render('list', {
+            username: request.session.usename || '',
+            videojuegos: rows,
+        });
+    }).catch((error) => {
+        console.log(error);
+        next(error);
     });
-}
+};
+
+exports.get_Lab17 = (request,response,next) => {
+    console.log("Laboratorio 17");
+    response.render("RespuestasLab17");
+};
