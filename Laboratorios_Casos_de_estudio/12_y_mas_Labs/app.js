@@ -4,6 +4,8 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const csrf = require('csurf');
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 
 //Laboratorio 14: cookies, uso de las librerias
 app.use(session({
@@ -24,6 +26,13 @@ app.use(express.static(path.join(__dirname, "public")));
 const csrfProtection = csrf();
 app.use(csrfProtection);
 
+//middleware para csrfProtection
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken(),
+    response.locals.username = request.session.username,
+    response.locals.isLoggedIn = request.session.isLoggedIn,
+    next();
+})
 //Rutas
 const rutasVideojuegos = require('./routes/videojuegos.routes');
 const tiendaSnoopy = require('./routes/videojuegos_2.routes');

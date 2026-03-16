@@ -1,3 +1,5 @@
+//Los modelos hacen la comunicacion con la base de datos
+
 const db = require ('../util/database');
 const bcrypt = require ('bcrypt');
 
@@ -21,5 +23,12 @@ module.exports = class User {
     static fetchOne(username){
         return db.execute("SELECT * FROM users WHERE username=?", [username]);
 
+    }
+
+    static getPrivilegios(username) {
+        return db.execute(
+            `SELECT privilegio FROM tiene t, roles r, otorga o, privilegios p
+            WHERE id_usuario=? AND t.id_rol=r.id AND r.id=o.id_rol AND o.id_privilegio=p.id`,
+            [username]);
     }
 }

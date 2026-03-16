@@ -1,9 +1,20 @@
 <form action="/videojuegos/new" method="POST">
+  
   <input type = "hidden" name = "_csrf" value = "<%= csrfToken %>">
   <div class="field">
     <label for="nombre" class="label">Nombre</label>
     <div class="control">
       <input id="nombre" name="nombre" class="input" type="text" placeholder="e.g Minecraft">
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="select">
+      <select id="tipo" name="tipo">
+        <% for (let tipo of tipos) { %>
+          <option value="<%= tipo.id %>"><%= tipo.nombre %></option>
+      <% } %>
+      </select>
     </div>
   </div>
 

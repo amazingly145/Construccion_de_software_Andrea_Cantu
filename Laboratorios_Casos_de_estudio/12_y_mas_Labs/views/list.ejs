@@ -1,15 +1,22 @@
 <%- include('includes/_header')%>
-<a href="/videojuegos/new"><button class="button is-primary">Nuevo videojuego</button></a>
-              <div class="columns">`;
 
-        <%for (let juego of videojuegos) { %>
+              
+<% for(let privilegio of privilegios) { %>
+  <% if(privilegio.privilegio == 'Crear videojuegos') { %>
+    <script> console.log("admin") </script>
+    <a href="/videojuegos/new"><button class="button is-primary">Nuevo videojuego</button></a>
+  <% } %>
+<% } %>
+              <div class="columns">
+          <%for (let juego of videojuegos) { %>
                 <div class="column">
-                   <%= juego.nombre %>
+                   <%= juego.nombre %> <br>
+                   <span class = "tag"><%= juego.tipo %></span>
                     <figure class="image">
                         <img class="is-rounded" src="<%= juego.imagen %>" />
                     </figure>
                 </div>
-        <%}%>
+        <% } %>
               </div>
             </div>
           </section>
@@ -64,9 +71,9 @@
     </div>
     <!--Preguntas Lab 17 && Lab18-->
     <div class="column">
-      <h1 class="title">Preguntas Laboratorio 17 y Laboratorio 18</h1>
+      <h1 class="title">Preguntas Laboratorio 17, Laboratorio 18 y Laboratorio 19</h1>
       <a href="/videojuegos/Lab17">
-        <button class="button is-primary">Lab17</button>
+        <button class="button is-primary">17,18,19</button>
       </a>
     </div>
   </div>
