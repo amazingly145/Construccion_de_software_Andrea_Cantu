@@ -3,6 +3,7 @@ const router = express.Router();
 const isAuth = require('../util/is-auth');
 const canView = require('../util/can-view');
 const canCreate = require('../util/can-create');
+const canEdit = require('../util/can-edit');
 const fs = require ('fs');
 
 const videojuegosController = require('../controllers/videojuego.controller');
@@ -18,6 +19,7 @@ router.get('/git', isAuth, videojuegosController.get_git);
 router.get("/RespuestasLab11", isAuth, videojuegosController.get_RespuestasLab11);
 router.get("/Lab13_preguntas", isAuth, videojuegosController.get_Lab13);
 router.get('/Lab17', isAuth, videojuegosController.get_Lab17);
+router.get('/editarPrivilegios', isAuth, canEdit, videojuegosController.get_editarPrivilegios)
 //Esta ruta debe de ir hasta el final
 router.get('/:videojuego_id', isAuth, canView, videojuegosController.get_list);
 

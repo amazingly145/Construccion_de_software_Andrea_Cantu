@@ -1,0 +1,21 @@
+<%- include('includes/_header')%>
+<input type = "hidden" name = "_csrf" value = "<%= csrfToken %>">
+<div class="field">
+    <div class="select">
+      <select id="tipo" name="tipo">
+        <% for (let rol of roles) { %>
+          <option value="<%= rol.id %>"><%= rol.rol %></option>
+      <% } %>
+      </select>
+    </div>
+  </div>
+
+<div class="field">
+    <div class="select">
+      <select id="tipo" name="tipo">
+        <% for (let nombre_privilegio of todosPrivilegios) { %>
+          <option value="<%= nombre_privilegio.id %>"><%= nombre_privilegio.privilegio %></option>
+      <% } %>
+      </select>
+    </div>
+  </div>

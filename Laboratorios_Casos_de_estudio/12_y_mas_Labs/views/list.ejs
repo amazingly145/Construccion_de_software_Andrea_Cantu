@@ -7,6 +7,12 @@
     <a href="/videojuegos/new"><button class="button is-primary">Nuevo videojuego</button></a>
   <% } %>
 <% } %>
+<% for(let privilegio of privilegios) { %>
+  <% if(privilegio.privilegio == 'editar roles y privilegios') { %>
+    <script> console.log("admin") </script>
+    <a href="/videojuegos/editarPrivilegios"><button class="button is-primary">Editar privilegios</button></a>
+  <% } %>
+<% } %>
               <div class="columns">
           <%for (let juego of videojuegos) { %>
                 <div class="column">

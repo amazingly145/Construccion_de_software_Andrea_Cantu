@@ -92,3 +92,25 @@ exports.get_Lab17 = (request,response,next) => {
         isLoggedIn: request.session.isLoggedIn,
     });
 };
+
+exports.get_editarPrivilegios = (request, response, next) => {
+    console.log("Editar roles y privilegios");
+    Videojuego.getRoles().then(([roles, fieldData]) => {
+        console.log(fieldData);
+        Videojuego.getPrivilegios().then(([todosPrivilegios, fieldData]) => {
+            console.log(fieldData);
+            return response.render("editar_privilegios", {
+                username: request.session.username,
+                isLoggedIn: request.session.isLoggedIn,
+                roles: roles,
+                todosPrivilegios: todosPrivilegios,
+            });
+        }).catch((error) => {
+            console.log(error);
+            next(error);
+        });
+    }).catch((error) => {
+        console.log(error);
+        next(error);
+    });
+}

@@ -37,4 +37,12 @@ module.exports = class Videojuego {
         return db.execute("SELECT * FROM tipo");
     }
 
+    static getRoles(){
+        return db.execute("SELECT * FROM roles");
+    }
+
+    static getPrivilegios(){
+        return db.execute("SELECT * FROM privilegios");
+    }
+
 }
