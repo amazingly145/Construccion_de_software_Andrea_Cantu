@@ -10,10 +10,12 @@
     </div>
   </div>
 
+  <!-- Tener cuidado con que variables se utilizan-->
 <div class="field">
     <div class="select">
       <select id="tipo" name="tipo">
         <% for (let nombre_privilegio of todosPrivilegios) { %>
+            <!-- Se usa la variable dentro del for-->
           <option value="<%= nombre_privilegio.id %>"><%= nombre_privilegio.privilegio %></option>
       <% } %>
       </select>
