@@ -34,6 +34,8 @@ CREATE TABLE `users` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+ALTER TABLE `users` ADD `email` VARCHAR(150) NOT NULL AFTER `created_at`;
+
 -- --------------------------------------------------------
 
 --

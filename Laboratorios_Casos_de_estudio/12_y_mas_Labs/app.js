@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const csrf = require('csurf');
 
 //Laboratorio 14: cookies, uso de las librerias
 app.use(session({
@@ -18,6 +19,10 @@ app.set('views', 'views');
 app.use(bodyParser.urlencoded({ extended: false }));
 //Carpeta estática
 app.use(express.static(path.join(__dirname, "public")));
+
+//Proteccion de las rutas
+const csrfProtection = csrf();
+app.use(csrfProtection);
 
 //Rutas
 const rutasVideojuegos = require('./routes/videojuegos.routes');
@@ -45,7 +50,5 @@ app.use((request, response, next) => {
 app.use((error,request, response, next) => {
     response.status(500).send(`Error interno del servidor: ${error.stack}`);
 });
-
-
 
 app.listen(3000);

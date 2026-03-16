@@ -3,17 +3,24 @@ const Videojuego = require('../models/videojuego.model');
 const path = require('path');
 exports.get_new = (request,response,next) => {
     response.render("new", {
+        isLoggedIn: request.session.isLoggedIn,
         username: request.session.username,
     });
 };
 
 exports.get_git = (request,response,next) => {
     console.log("git");
-    response.render("git");
+    response.render("git" , {
+        username: request.session.username,
+        isLoggedIn: request.session.isLoggedIn,
+    });
 };
 
 exports.get_RespuestasLab11 = (request, response, next) => {
-    response.render("Respuestaslab11");
+    response.render("Respuestaslab11", {
+        username: request.session.username,
+        isLoggedIn: request.session.isLoggedIn,
+    });
 };
 
 //videojuegos_2.routes
@@ -29,7 +36,10 @@ exports.get_Lab6 = (request, response, next) =>{
 };
 
 exports.get_Lab13 = (request, response, next) => {
-    response.render("Lab13_preguntas");
+    response.render("Lab13_preguntas", {
+        username: request.session.username,
+        isLoggedIn: request.session.isLoggedIn,
+    });
     console.log("Laboratorio 13")
 };
 
@@ -49,7 +59,9 @@ exports.get_list = (request, response, next) => {
         console.log(request.session.username);
         console.log(rows);
         return response.render('list', {
-            username: request.session.usename || '',
+            csrfToken: request.csrfToken(),
+            isLoggedIn: request.session.isLoggedIn,
+            username: request.session.username || '',
             videojuegos: rows,
         });
     }).catch((error) => {
@@ -60,5 +72,8 @@ exports.get_list = (request, response, next) => {
 
 exports.get_Lab17 = (request,response,next) => {
     console.log("Laboratorio 17");
-    response.render("RespuestasLab17");
+    response.render("RespuestasLab17", {
+        username: request.session.username,
+        isLoggedIn: request.session.isLoggedIn,
+    });
 };

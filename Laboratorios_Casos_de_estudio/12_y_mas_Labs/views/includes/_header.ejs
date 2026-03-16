@@ -28,22 +28,23 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="/videojuegos">
-            Videojuegos
-          </a>
-
+          <% if (isLoggedIn != ''){ %>
+            <a class="navbar-item" href="/videojuegos">
+              Videojuegos
+            </a>
+          <% } %>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary" href="/users/signup">
-                <strong>Sign up</strong>
-              </a>
-              <% if (typeof(username) != "undefined") { %>
+              <% if (username != '') { %>
                 <a class="button is-light" href="/users/logout">
                   Log out
                 </a>
-              <% } else { %>
+              <% }else{ %>
+                <a class="button is-primary" href="/users/signup">
+                  <strong>Sign up</strong>
+                </a>
                 <a class="button is-light" href="/users/login">
                   Log in
                 </a>
