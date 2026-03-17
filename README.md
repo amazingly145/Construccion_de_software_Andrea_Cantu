@@ -11,7 +11,7 @@
 **Laboratorio 7:** Manejo de ramas. <br>
 **Laboratorio 8:** Introducción al back-end <br>
 **Laboratorio 9:** DBMS de escritorio <br>
-**Laboratorio 10:** Rutas y formas 
+**Laboratorio 10:** Rutas y formas. <br>
 **Laboratorio 11:** Express <br>
 **Laboratorio 12:** HTML dinámico <br>
 **Laboratorio 13:** MVC <br>
@@ -47,5 +47,5 @@
 ## Ejercicios
 1. Ejercicio: Identificación de llaves en un MR y expresión de consultas en álgebra relacional
 2. Ejercicio: Traducción de algebra relacional a SQL
-3. Ejercicio: expresión de consultas en SQL usaando funciones agregadas
+3. Ejercicio: expresión de consultas en SQL usando funciones agregadas
 4. Ejercicio: Expresión de consultas en SQL usando Sub-consultas
