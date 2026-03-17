@@ -45,10 +45,7 @@
 4. MER, DD y MR
 
 ## Ejercicios
-Ejercicio: Identificación de llaves en un MR y expresión de consultas en álgebra relacional
-
-Ejercicio: Traducción de algebra relacional a SQL
-
-Ejercicio: expresión de consultas en SQL usaando funciones agregadas
-
-Ejercicio: Expresión de consultas en SQL usando Sub-consultas
+1. Ejercicio: Identificación de llaves en un MR y expresión de consultas en álgebra relacional
+2. Ejercicio: Traducción de algebra relacional a SQL
+3. Ejercicio: expresión de consultas en SQL usaando funciones agregadas
+4. Ejercicio: Expresión de consultas en SQL usando Sub-consultas
