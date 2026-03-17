@@ -1,5 +1,7 @@
 # Construccion_de_software_Andrea_Cantu
 
+# Laboratorios 
+
 ## Laboratorio 1
 Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información 
 ## Laboratorio 2
@@ -40,3 +42,33 @@ Autentificación
 Control de acceso basado en roles 
 ## Laboratorio 20
 Consultas en SQL
+
+# Lecturas
+1. Introducción a la gestión de proyectos
+2. Sistema de información en los negocios
+3. Gestión de alcance
+4. Lectura DB vs DBMS
+5. Lectura Notación del modelo entidad relación y restricciones adicionales.
+## Faltantes
+6. Lectura reglas del traslado del MER a MR
+7. Lectura gestión de la comunicacion
+8. Lectura modelo relacional y álgebra relacional
+9. Lectura diagramas de secuencia
+10. Lectura álgebra relacional, sql básico y funciones agregadas.
+11. Lectura metodología para diseñar casos de pruebas a partir de casos de uso
+12. Lectura Consultas en SQL usando rles y sub consultas.
+
+## Casos de estudio
+Casos de estudio 1: Requisitos de software
+Caso de estudio 2: Farmacéutica y Liga de fútbol
+Caso de estudio 3: Diagrama de clases para un videjuego
+Caso de estudio 4: MER, DD y MR
+
+## Ejercicios
+Ejercicio: Identificación de llaves en un MR y expresión de consultas en álgebra relacional
+
+Ejercicio: Traducción de algebra relacional a SQL
+
+Ejercicio: expresión de consultas en SQL usaando funciones agregadas
+
+Ejercicio: Expresión de consultas en SQL usando Sub-consultas
