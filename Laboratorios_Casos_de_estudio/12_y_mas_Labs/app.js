@@ -69,6 +69,7 @@ app.use((request, response, next) => {
 app.use('/videojuegos/Lab', tiendaSnoopy);
 app.use('/users', rutasUsuarios);
 app.use('/videojuegos', rutasVideojuegos);
+app.use(express.static(path.join(__dirname, 'public', 'uploads')));
 
 //Error 404
 app.use((request, response, next) => {
