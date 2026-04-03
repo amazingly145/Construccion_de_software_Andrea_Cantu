@@ -16,11 +16,17 @@
               <div class="columns">
           <%for (let juego of videojuegos) { %>
                 <div class="column">
-                   <%= juego.nombre %> <br>
+                   <a href="/videojuegos/<%= juego.id %>"><%= juego.nombre %></a><br>
                    <span class = "tag"><%= juego.tipo %></span>
                     <figure class="image">
                         <img class="is-rounded" src="<%= juego.imagen %>" />
                     </figure>
+                    <% for(let privilegio of privilegios) { %>
+                      <% if (privilegio.privilegio == 'crear_videojuegos') { %>
+                        <br>
+                        <a href = "/videojuegos/<%= videojuego.id %>/edit" class = "button is-primary">Editar</a>
+                        <% } %>
+                      <% } %>
                 </div>
         <% } %>
               </div>

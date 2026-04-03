@@ -25,6 +25,13 @@ module.exports = class Videojuego {
         return db.execute('SELECT v.nombre AS nombre, v.imagen, t.nombre as tipo FROM videojuegos v, tipo t WHERE v.id_tipo = t.id AND id = ?', [id]);
     }
 
+    static edit(id, nombre, imagen, tipo) {
+        return db.execute(
+            `UPDATE videojuegos SET nombre=?, imagen=?, id_tipo=? WHERE id=?`,
+            [nombre, imagen, tipo, id]
+        );
+    }
+
     static fetchOne(id) {
         if(id) {
             return this.fetchOne(id);

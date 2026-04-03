@@ -6,6 +6,7 @@ exports.get_new = (request,response,next) => {
     Videojuego.getTipos().then(([tipos, fieldData]) => {
         console.log(fieldData);
         return response.render("new", {
+            editar: false,
             tipos: tipos,
             privilegios: request.session.privilegios,
             username: request.session.username,
@@ -84,6 +85,25 @@ exports.get_list = (request, response, next) => {
     });
 };
 
+exports.get_edit = (request, response, next) => {
+    Videojuego.getTipos().then(([tipos, fieldData]) => {
+        return response.render('new', {
+            editar: true,
+            videojuego: videojuegos[0],
+            tipos: tipos,
+            csrfToken: request.csrfToken(),
+            isLoggedIn: request.session.isLoggedIn || '',
+            username: request.session.username || '',
+        });
+    }).catch((errorfetchOne) => {
+        console.log(errorfetchOne);
+        next (errorfetchOne);
+    }).catch((error) => {
+        console.log(error);
+        next(error);
+    })
+}
+
 exports.get_Lab17 = (request,response,next) => {
     console.log("Laboratorio 17");
     response.render("RespuestasLab17", {
@@ -114,3 +134,13 @@ exports.get_editarPrivilegios = (request, response, next) => {
         next(error);
     });
 }
+
+exports.post_edit = (request, response, next) => {
+    Videojuego.edit(request.body.id, request.body.nombre, request.body.imagen, request.body.tipo)
+        .then(() => {
+            return response.redirect(`/videojuegos/${request.body.id}`);
+        }).catch((error) => {
+            console.log(error);
+            next(error);
+        });
+};

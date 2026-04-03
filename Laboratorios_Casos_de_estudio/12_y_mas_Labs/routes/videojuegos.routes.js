@@ -20,6 +20,7 @@ router.get("/RespuestasLab11", isAuth, videojuegosController.get_RespuestasLab11
 router.get("/Lab13_preguntas", isAuth, videojuegosController.get_Lab13);
 router.get('/Lab17', isAuth, videojuegosController.get_Lab17);
 router.get('/editarPrivilegios', isAuth, canEdit, videojuegosController.get_editarPrivilegios)
+router.get('/:videojuego_id/edit', isAuth, canCreate)
 //Esta ruta debe de ir hasta el final
 router.get('/:videojuego_id', isAuth, canView, videojuegosController.get_list);
 
@@ -27,6 +28,7 @@ router.get('/:videojuego_id', isAuth, canView, videojuegosController.get_list);
 router.post('/new', isAuth, canCreate, videojuegosController.post_new);
 router.post('/nuevo', isAuth, canCreate, videojuegosController.post_new);
 router.post('/add', isAuth, canCreate, videojuegosController.get_new);
+router.post('/edit', isAuth, canCreate, videojuegosController.post_edit);
 router.use(isAuth, canView, videojuegosController.get_list);
 
 module.exports = router;
