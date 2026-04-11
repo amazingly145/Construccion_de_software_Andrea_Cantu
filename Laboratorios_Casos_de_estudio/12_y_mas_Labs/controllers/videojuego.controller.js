@@ -85,6 +85,15 @@ exports.get_list = (request, response, next) => {
     });
 };
 
+exports.get_buscar = (request, response, next) => {
+    Videojuego.buscar(request.params.videojuego).then(([videojuegos, fieldData]) => {
+        return response.status(200).json({videojuegos: videojuegos});
+    }).catch((error) => {
+        console.log(error);
+        return response.status(500).json({message: error.stack});
+    });
+}
+
 exports.get_edit = (request, response, next) => {
     Videojuego.getTipos().then(([tipos, fieldData]) => {
         return response.render('new', {

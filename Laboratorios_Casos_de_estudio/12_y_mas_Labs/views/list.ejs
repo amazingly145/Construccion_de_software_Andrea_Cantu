@@ -1,5 +1,14 @@
 <%- include('includes/_header')%>
 
+<label for="buscar">Buscar</label>
+<input
+  class="input is-primary"
+  type="text"
+  id="buscar"
+  placeholder="Minecr..."
+/>
+<br><br>
+
               
 <% for(let privilegio of privilegios) { %>
   <% if(privilegio.privilegio == 'Crear videojuegos') { %>
@@ -13,8 +22,8 @@
     <a href="/videojuegos/editarPrivilegios"><button class="button is-primary">Editar privilegios</button></a>
   <% } %>
 <% } %>
-              <div class="columns">
-          <%for (let juego of videojuegos) { %>
+              <div id="lista" class="columns"> 
+                <% for (let juego of videojuegos) { %>
                 <div class="column">
                    <a href="/videojuegos/<%= juego.id %>"><%= juego.nombre %></a><br>
                    <span class = "tag"><%= juego.tipo %></span>
@@ -83,7 +92,7 @@
     </div>
     <!--Preguntas Lab 17 && Lab18-->
     <div class="column">
-      <h1 class="title">Preguntas Laboratorio 17, Laboratorio 18 y Laboratorio 19</h1>
+      <h1 class="title">Preguntas Laboratorio 17, Laboratorio 18 y Laboratorio 19 y más</h1>
       <a href="/videojuegos/Lab17">
         <button class="button is-primary">17,18,19</button>
       </a>
@@ -92,5 +101,44 @@
 </div>
 </div>
 </section>
+<script>
+  const buscar = document.getElementById("buscar");
+  // Guardamos los privilegios en una constante de JS para usarlos en el cliente
+  const puedeEditar = <%= privilegios.some(p => p.privilegio === 'Crear videojuegos') %>;
+
+  buscar.onkeyup = () => {
+    fetch(`/videojuegos/buscar/${buscar.value}`, {
+      method: 'GET',
+    })
+    .then((result) => result.json())
+    .then((data) => {
+      let html = '';
+      for (let juego of data.videojuegos) { 
+        html += `
+          <div class="column">
+            <a href="/videojuegos/${juego.id}">${juego.nombre}</a><br>
+            <span class="tag">${juego.tipo}</span>
+            <figure class="image">
+              <img class="is-rounded" src="/uploads/${juego.imagen}" />
+            </figure>`;
+        
+        // Usamos la variable de JS que definimos arriba
+        if (puedeEditar) {
+          html += `<br><a href="/videojuegos/${juego.id}/edit" class="button is-primary">Editar</a>`;
+        }
+
+        html += `</div>`;
+      }
+
+      // ASEGÚRATE de que tu div de columnas tenga id="lista"
+      const lista = document.getElementById("lista");
+      if(lista) {
+          lista.innerHTML = html;
+      }
+    })
+    .catch((error) => console.log(error));
+  }
+</script>
+
 
 <%- include('includes/_footer') %>

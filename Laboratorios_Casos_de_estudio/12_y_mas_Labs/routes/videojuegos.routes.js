@@ -23,6 +23,7 @@ router.get('/editarPrivilegios', isAuth, canEdit, videojuegosController.get_edit
 router.get('/:videojuego_id/edit', isAuth, canCreate)
 //Esta ruta debe de ir hasta el final
 router.get('/:videojuego_id', isAuth, canView, videojuegosController.get_list);
+router.get('/buscar/:videojuego', isAuth, canView, videojuegosController.get_buscar);
 
 //Metodos de Post
 router.post('/new', isAuth, canCreate, videojuegosController.post_new);
